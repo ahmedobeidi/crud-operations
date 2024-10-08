@@ -18,7 +18,7 @@ else {
 }
 
 function create() {
-    if ((productName.value != '') && (productCategory.value != '') && (productPrice.value != '') && (productQuantity.value != '') && (productPrice.value > 0) && (productQuantity.value > 1)) {
+    if ((productName.value != '') && (productCategory.value != '') && (productPrice.value != '') && (productQuantity.value != '') && (productPrice.value > 0) && (productQuantity.value > 0)) {
         let newProduct = {
             productName: productName.value,
             productCategory: productCategory.value,
@@ -111,7 +111,7 @@ function update(rowID) {
     productQuantity.value = productData[rowID].productQuantity;
     mood = 'update';
     createButton.setAttribute('class', 'col-4 col-lg-2 mb-4 btn btn-warning');
-    createButton.innerText = 'UPDATE'
+    createButton.innerText = 'UPDATE';
     tmv = rowID;
 }
 
