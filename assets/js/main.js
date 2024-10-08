@@ -97,6 +97,8 @@ function deleteAll() {
     productData.splice(0);
     clear();
     mood = 'create';
+    createButton.setAttribute('class', 'col-4 col-lg-2 mb-4 btn btn-success');
+    createButton.innerText = 'CREATE';
     showData();
 }
 
