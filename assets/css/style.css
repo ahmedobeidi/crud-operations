@@ -1,0 +1,31 @@
+
+#inputs {
+    border: 1px solid #ffffff2d;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.input {
+    border: 1px solid gray;
+    background-color: #03030346;
+}
+
+.input:focus {
+    background-color: black;
+}
+
+#createButton, #searchButton, #deleteAllButton {
+    margin-left: 12px;
+}
+
+#deleteAllButton {
+    margin-top: 20px;
+}
+
+#search {
+    margin-right: 0;
+}
+
+th {
+    background-color: #03030346 !important;
+}

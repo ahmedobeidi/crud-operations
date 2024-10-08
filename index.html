@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>CRUD</title>
+</head>
+<body class="bg-dark">
+    
+    <!-- Container -->
+    <div class="container text-light">
+        <!-- Header -->
+        <header class="head">
+            <h2 id="title" class="mt-3">CRUDS operations <span class="text-warning">!</span></h2>
+        </header>
+
+        <!-- Inputs Section -->
+        <section id="inputs" class="row mt-4">
+            <div id="productNameDiv" class="col-md-6 mb-4">
+                <label class="mb-2" for="productName">PRODUCT NAME <span class="text-warning">:</span></label>
+                <input id="productNameInput" class="input form-control text-light" type="text">
+            </div>
+            <div id="productCategoryDiv" class="col-md-6 mb-4">
+                <label class="mb-2" for="productCategory">PRODUCT CATEGORY <span class="text-warning">:</span></label>
+                <input id="productCategoryInput" class="input form-control text-light" type="text">
+            </div>
+            <div id="productPriceDiv" class="col-md-6 mb-4">
+                <label class="mb-2" for="productPrice">PRODUCT PRICE <span class="text-warning">:</span></label>
+                <input id="productPriceInput" class="input form-control text-light" type="number">
+            </div>
+            <div id="productQuantityDiv" class="col-md-6 mb-4">
+                <label class="mb-2" for="productQuantity">PRODUCT QUANTITY <span class="text-warning">:</span></label>
+                <input id="productQuantityInput" class="input form-control text-light" type="number">
+            </div>
+            <div id="createButtonDiv" class="row">
+                <div onclick="create()" id="createButton" class="col-4 col-lg-2 mb-4 btn btn-success">CREATE</div>
+            </div>
+            
+
+            <!-- SEARCH -->
+                <div id="serachDiv" class="col-12 mb-4">
+                    <label class="mb-2" for="searchProduct">SEARCH <span class="text-warning">:</span></label>
+                    <input onkeyup="search(this.value)" id="searchProduct" class="input form-control text-light" type="text">
+                </div>
+        </section>
+
+        <!-- Output Section -->
+        <div class="text-center">
+            <div id="deleteAllDiv" class="row"></div>
+            
+            <table id="table" class="table mt-4 table-dark table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>CATEGORY</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
