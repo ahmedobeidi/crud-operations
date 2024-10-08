@@ -119,20 +119,31 @@ function update(rowID) {
 // Search product
 function search(value) {
     let tr = '';
+    let counter = 0;
+    let newVal = value.toLowerCase();
+    let valueArr = newVal.split(''); 
     for (let i = 0; i < productData.length; i++) {
-        if (productData[i].productName.toLowerCase().includes(value.toLowerCase())) {
-            tr += `
-            <tr>
-                <td class="pt-3 pb-3 text-center">${i+1}</td>
-                <td class="pt-3 pb-3 text-center">${productData[i].productName}</td>
-                <td class="pt-3 pb-3 text-center">${productData[i].productCategory}</td>
-                <td class="pt-3 pb-3 text-center">${productData[i].productPrice}</td>
-                <td class="pt-3 pb-3 text-center">${productData[i].productQuantity}</td>
-                <td class="pt-3 pb-3 text-center"><button onclick="update(${i})" id="update" class="btn btn-warning">UPDATE</button></td>
-                <td class="pt-3 pb-3 text-center"><button onclick="deleteProduct(${i})" id="delete" class="btn btn-danger">DELETE</button></td>
-            </tr>    
-        `;
-        }
+        for (let j = 0; j < valueArr.length; j++) {
+            if (productData[i].productName.toLowerCase().includes(valueArr[j])) {
+                counter++;
+                if (counter == valueArr.length) {
+                    counter = 0;
+                    tr += `
+                    <tr>
+                        <td class="pt-3 pb-3 text-center">${i+1}</td>
+                        <td class="pt-3 pb-3 text-center">${productData[i].productName}</td>
+                        <td class="pt-3 pb-3 text-center">${productData[i].productCategory}</td>
+                        <td class="pt-3 pb-3 text-center">${productData[i].productPrice}</td>
+                        <td class="pt-3 pb-3 text-center">${productData[i].productQuantity}</td>
+                        <td class="pt-3 pb-3 text-center"><button onclick="update(${i})" id="update" class="btn btn-warning">UPDATE</button></td>
+                        <td class="pt-3 pb-3 text-center"><button onclick="deleteProduct(${i})" id="delete" class="btn btn-danger">DELETE</button></td>
+                    </tr>    
+                `;
+                }
+            }
+            else { counter = 0 }
+        }       
     }
     document.getElementById('tbody').innerHTML = tr;
+    if (value == '') { counter = 0; showData(); }
 }
